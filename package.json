@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "material-ui": "^0.19.4",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "material-ui": "^0.18.7",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
     "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17",
-    "react-tap-event-plugin": "^3.0.2"
+    "react-router-dom": "^4.1.2",
+    "react-scripts": "^1.0.10",
+    "react-tap-event-plugin": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,12 +20,12 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.2",
+    "babel-eslint": "^7.2.3",
     "husky": "^0.14.3",
-    "lint-staged": "^5.0.0",
-    "prettier": "^1.8.2",
-    "standard": "^10.0.3"
-  }
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3",
+    "standard": "^10.0.2"
+  },
   "lint-staged": {
     "*.js": [
       "prettier --write --single-quote --no-semi",
