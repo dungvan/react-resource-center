@@ -35,37 +35,37 @@ class App extends Component {
               docked={false}
               onRequestChange={open => this.setState({ open })}
             >
-              <NavLink to='/'>
+              <NavLink activeClassName='active' exact to='/'>
                 <MenuItem onTouchTap={this.handleClose.bind(this)}>
                   <p>Home</p>
                 </MenuItem>
               </NavLink>
-              <NavLink to='/'>
+              <NavLink activeClassName='active' to='/logos'>
                 <MenuItem onTouchTap={this.handleClose.bind(this)}>
                   <p>Logos</p>
                 </MenuItem>
               </NavLink>
-              <NavLink to='/'>
+              <NavLink activeClassName='active' to='/posters'>
                 <MenuItem onTouchTap={this.handleClose.bind(this)}>
                   <p>Posters</p>
                 </MenuItem>
               </NavLink>
-              <NavLink to='/'>
+              <NavLink activeClassName='active' to='/' letterhead>
                 <MenuItem onTouchTap={this.handleClose.bind(this)}>
                   <p>Letterhead</p>
                 </MenuItem>
               </NavLink>
-              <NavLink to='/'>
+              <NavLink activeClassName='active' to='/share-a-story'>
                 <MenuItem onTouchTap={this.handleClose.bind(this)}>
                   <p>Share a Story</p>
                 </MenuItem>
               </NavLink>
-              <NavLink to='/'>
+              <NavLink activeClassName='active' to='/service-request-form'>
                 <MenuItem onTouchTap={this.handleClose.bind(this)}>
                   <p>Service Request Form</p>
                 </MenuItem>
               </NavLink>
-              <NavLink to='/'>
+              <NavLink activeClassName='active' to='/tutorial'>
                 <MenuItem onTouchTap={this.handleClose.bind(this)}>
                   <p>Tutorial</p>
                 </MenuItem>
