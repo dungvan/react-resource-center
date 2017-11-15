@@ -6,7 +6,8 @@ import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import fusTheme from './fusTheme'
-import { Route } from 'react-router-dom'
+import { BrowserRouter, Route, NavLink } from 'react-router-dom'
+import './App.css'
 
 injectTapEventPlugin()
 
@@ -20,55 +21,76 @@ class App extends Component {
     this.setState({ open: !this.state.open })
   }
 
+  handleClose () {
+    this.setState({ open: false })
+  }
+
   render () {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(fusTheme)}>
-        <div>
-          <Drawer
-            open={this.state.open}
-            docked={false}
-            onRequestChange={open => this.setState({ open })}
-          >
-            <MenuItem>Menu Item</MenuItem>
-            <MenuItem>Menu Item 2</MenuItem>
-          </Drawer>
-          <AppBar
-            title='Title'
-            onLeftIconButtonTouchTap={this.handleToggle}
-            iconClassNameRight='muidocs-icon-navigation-expand-more'
-          />
-          <Route exact id='/'>
-            <p>Home View</p>
-          </Route>
-          <Route id='/logos-posters'>
-            <p>Logos and Posters View</p>
-          </Route>
-          <Route id='/logos'>
-            <p>Logos View</p>
-          </Route>
-          <Route id='/posters'>
-            <p>Posters View</p>
-          </Route>
-          <Route id='/letterhead'>
-            <p>Letterhead View</p>
-          </Route>
-          <Route id='/share-a-story'>
-            <p>Share a Story View</p>
-          </Route>
-          <Route id='/planning-guide'>
-            <p>Planning guide View</p>
-          </Route>
-          <Route id='/services'>
-            <p>Services View</p>
-          </Route>
-          <Route id='/glossary'>
-            <p>Glossary View</p>
-          </Route>
-          <Route id='/service-request-form'>
-            <p>Service Request Form View</p>
-          </Route>
-        </div>
-      </MuiThemeProvider>
+      <BrowserRouter>
+        <MuiThemeProvider muiTheme={getMuiTheme(fusTheme)}>
+          <div>
+            <Drawer
+              open={this.state.open}
+              docked={false}
+              onRequestChange={open => this.setState({ open })}
+            >
+              <NavLink to='/'>
+                <MenuItem onTouchTap={this.handleClose.bind(this)}>
+                  <p>Home</p>
+                </MenuItem>
+              </NavLink>
+              <NavLink to='/'>
+                <MenuItem onTouchTap={this.handleClose.bind(this)}>
+                  <p>Logos</p>
+                </MenuItem>
+              </NavLink>
+              <NavLink to='/'>
+                <MenuItem onTouchTap={this.handleClose.bind(this)}>
+                  <p>Posters</p>
+                </MenuItem>
+              </NavLink>
+              <NavLink to='/'>
+                <MenuItem onTouchTap={this.handleClose.bind(this)}>
+                  <p>Letterhead</p>
+                </MenuItem>
+              </NavLink>
+              <NavLink to='/'>
+                <MenuItem onTouchTap={this.handleClose.bind(this)}>
+                  <p>Share a Story</p>
+                </MenuItem>
+              </NavLink>
+              <NavLink to='/'>
+                <MenuItem onTouchTap={this.handleClose.bind(this)}>
+                  <p>Service Request Form</p>
+                </MenuItem>
+              </NavLink>
+              <NavLink to='/'>
+                <MenuItem onTouchTap={this.handleClose.bind(this)}>
+                  <p>Tutorial</p>
+                </MenuItem>
+              </NavLink>
+            </Drawer>
+
+            <AppBar
+              title='Title'
+              onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
+              iconClassNameRight='muidocs-icon-navigation-expand-more'
+            />
+
+            <Route exact path='/' />
+            <Route path='/logos-posters' />
+            <Route path='/logos' />
+            <Route path='/posters' />
+            <Route path='/letterhead' />
+            <Route path='/share-a-story' />
+            <Route path='/planning-guide' />
+            <Route path='/services' />
+            <Route path='/glossary' />
+            <Route path='/service-request-form' />
+          </div>
+        </MuiThemeProvider>
+      </BrowserRouter>
     )
   }
 }
