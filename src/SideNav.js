@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import { AppBar, Drawer, MenuItem } from 'material-ui';
+import { AppBar, Drawer } from 'material-ui';
+import SideBarItem from './SideBarItem';
 
 /*
   Add your nav link here...
@@ -52,17 +52,13 @@ export default class SideNav extends Component {
         >
           {links.map((link, i) => {
             return (
-              <NavLink
-                activeClassName='active'
-                exact={link.isExact}
-                to={link.linkTo}
+              <SideBarItem
+                isExact={link.isExact}
+                linkTo={link.linkTo}
+                primaryText={link.text}
+                handleClose={this.handleClose}
                 key={i}
-              >
-                <MenuItem
-                  onTouchTap={this.handleClose}
-                  primaryText={link.text}
-                />
-              </NavLink>
+              />
             )
           })}
         </Drawer>

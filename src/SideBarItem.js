@@ -1,19 +1,14 @@
-import React, { Compoment } from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MenuItem } from 'material-ui';
+import MenuItem from 'material-ui/MenuItem';
 
-export default class SideBarItem extends Compoment {
-  constructor(props) {
+export default class SideBarItem extends Component {
+  constructor (props) {
     super(props);
-    this.state = {open: false};
-    this.handleClose = this.handleClose.bind(this);
+    this.state = { open: false };
   }
 
-  handleClose(e) {
-    e.preventDefault();
-  }
-
-  render() {
+  render () {
     return (
       <NavLink
         activeClassName='active'
@@ -22,10 +17,10 @@ export default class SideBarItem extends Compoment {
         key={this.props.i}
       >
         <MenuItem
-          onTouchTap={this.handleClose}
-          primaryText={this.props.text}
+          primaryText={this.props.primaryText}
+          onTouchTap={this.props.handleClose}
         />
       </NavLink>
-    );
+    )
   }
 }
