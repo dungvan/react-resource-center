@@ -1,93 +1,53 @@
-import React, { Component } from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import AppBar from 'material-ui/AppBar'
-import Drawer from 'material-ui/Drawer'
-import MenuItem from 'material-ui/MenuItem'
-import injectTapEventPlugin from 'react-tap-event-plugin'
-import fusTheme from './fusTheme'
-import { BrowserRouter, Route, NavLink } from 'react-router-dom'
-import './App.css'
+import React, { Component } from 'react';
+import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-injectTapEventPlugin()
+/* Material-UI */
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import fusTheme from './fusTheme';
+
+import SideNav from './SideNav';
+
+/* Import Views */
+import Home from './views/Home';
+import Glossary from './views/Glossary';
+import Letterhead from './views/Letterhead';
+import Logos from './views/Logos';
+import LogosPosters from './views/LogosPosters';
+import PlanningGuide from './views/PlanningGuide';
+import Posters from './views/Posters';
+import ServiceRequest from './views/ServiceRequest';
+import Services from './views/Services';
+import Story from './views/Story';
+import Tutorial from './views/Tutorial';
+import NotFound from './views/NotFound';
+
+injectTapEventPlugin();
 
 class App extends Component {
-  constructor () {
-    super()
-    this.state = { open: false }
-  }
-
-  handleToggle () {
-    this.setState({ open: !this.state.open })
-  }
-
-  handleClose () {
-    this.setState({ open: false })
-  }
-
   render () {
     return (
       <BrowserRouter>
         <MuiThemeProvider muiTheme={getMuiTheme(fusTheme)}>
           <div>
-            <Drawer
-              open={this.state.open}
-              docked={false}
-              onRequestChange={open => this.setState({ open })}
-            >
-              <NavLink activeClassName='active' exact to='/'>
-                <MenuItem onTouchTap={this.handleClose.bind(this)}>
-                  <p>Home</p>
-                </MenuItem>
-              </NavLink>
-              <NavLink activeClassName='active' to='/logos'>
-                <MenuItem onTouchTap={this.handleClose.bind(this)}>
-                  <p>Logos</p>
-                </MenuItem>
-              </NavLink>
-              <NavLink activeClassName='active' to='/posters'>
-                <MenuItem onTouchTap={this.handleClose.bind(this)}>
-                  <p>Posters</p>
-                </MenuItem>
-              </NavLink>
-              <NavLink activeClassName='active' to='/' letterhead>
-                <MenuItem onTouchTap={this.handleClose.bind(this)}>
-                  <p>Letterhead</p>
-                </MenuItem>
-              </NavLink>
-              <NavLink activeClassName='active' to='/share-a-story'>
-                <MenuItem onTouchTap={this.handleClose.bind(this)}>
-                  <p>Share a Story</p>
-                </MenuItem>
-              </NavLink>
-              <NavLink activeClassName='active' to='/service-request-form'>
-                <MenuItem onTouchTap={this.handleClose.bind(this)}>
-                  <p>Service Request Form</p>
-                </MenuItem>
-              </NavLink>
-              <NavLink activeClassName='active' to='/tutorial'>
-                <MenuItem onTouchTap={this.handleClose.bind(this)}>
-                  <p>Tutorial</p>
-                </MenuItem>
-              </NavLink>
-            </Drawer>
+            <SideNav />
 
-            <AppBar
-              title='Title'
-              onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
-              iconClassNameRight='muidocs-icon-navigation-expand-more'
-            />
-
-            <Route exact path='/' />
-            <Route path='/logos-posters' />
-            <Route path='/logos' />
-            <Route path='/posters' />
-            <Route path='/letterhead' />
-            <Route path='/share-a-story' />
-            <Route path='/planning-guide' />
-            <Route path='/services' />
-            <Route path='/glossary' />
-            <Route path='/service-request-form' />
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/logos-posters' component={LogosPosters} />
+              <Route path='/logos' component={Logos} />
+              <Route path='/posters' component={Posters} />
+              <Route path='/letterhead' component={Letterhead} />
+              <Route path='/share-a-story' component={Story} />
+              <Route path='/planning-guide' component={PlanningGuide} />
+              <Route path='/services' component={Services} />
+              <Route path='/glossary' component={Glossary} />
+              <Route path='/service-request-form' component={ServiceRequest} />
+              <Route path='/tutorial' component={Tutorial} />
+              <Route component={NotFound} />
+            </Switch>
           </div>
         </MuiThemeProvider>
       </BrowserRouter>
@@ -95,4 +55,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default App;
