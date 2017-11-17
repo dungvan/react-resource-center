@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import MenuItem from 'material-ui/MenuItem';
+import { ListItem } from 'material-ui/List';
 
 export default class SideBarItem extends Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = {
+      open: false,
+      click: false
+    };
   }
 
   render() {
@@ -16,10 +19,10 @@ export default class SideBarItem extends Component {
         to={this.props.linkTo}
         key={this.props.i}
       >
-        <MenuItem
+        <ListItem
           primaryText={this.props.primaryText}
           onTouchTap={this.props.handleClose}
-          hoverColor="#eee"
+          hoverColor="red"
         />
       </NavLink>
     );
