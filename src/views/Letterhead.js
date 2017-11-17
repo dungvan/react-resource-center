@@ -40,31 +40,28 @@ export default class Letterhead extends Component {
             </p>
           </div>
         </div>
+        <div className="col s12 m6" style={{ paddingBottom: '0.75rem' }}>
+          <Card>
+            <CardMedia>
+              <img src="https://unsplash.it/600/776/?random" alt="" />
+            </CardMedia>
+            <CardActions>
+              <FlatButton label="Action1" />
+            </CardActions>
+            <CardTitle title="Card title" />
+          </Card>
+        </div>
 
-        <div className="row">
-          <div className="col s12 m6">
-            <Card>
-              <CardMedia>
-                <img src="https://unsplash.it/600/776/?random" alt="" />
-              </CardMedia>
-              <CardActions>
-                <FlatButton label="Action1" />
-              </CardActions>
-              <CardTitle title="Card title" />
-            </Card>
-          </div>
-
-          <div className="col s12 m6">
-            <Card>
-              <CardMedia>
-                <img src="https://unsplash.it/600/776/?random" alt="" />
-              </CardMedia>
-              <CardActions>
-                <FlatButton label="Action1" />
-              </CardActions>
-              <CardTitle title="Card title" />
-            </Card>
-          </div>
+        <div className="col s12 m6" style={{ paddingBottom: '0.75rem' }}>
+          <Card>
+            <CardMedia>
+              <img src="https://unsplash.it/600/776/?random" alt="" />
+            </CardMedia>
+            <CardActions>
+              <FlatButton label="Action1" />
+            </CardActions>
+            <CardTitle title="Card title" />
+          </Card>
         </div>
       </div>
     );
