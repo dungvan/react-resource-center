@@ -29,7 +29,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "standard --config-standard --fix",
+      "standard --fix",
       "prettier --write --single-quote",
       "eslint --fix",
       "git add"
