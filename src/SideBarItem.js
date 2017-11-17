@@ -3,15 +3,15 @@ import { NavLink } from 'react-router-dom';
 import MenuItem from 'material-ui/MenuItem';
 
 export default class SideBarItem extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = { open: false };
   }
 
-  render () {
+  render() {
     return (
       <NavLink
-        activeClassName='active'
+        activeClassName="active"
         exact={this.props.isExact}
         to={this.props.linkTo}
         key={this.props.i}
@@ -19,8 +19,9 @@ export default class SideBarItem extends Component {
         <MenuItem
           primaryText={this.props.primaryText}
           onTouchTap={this.props.handleClose}
+          hoverColor="#eee"
         />
       </NavLink>
-    )
+    );
   }
 }
