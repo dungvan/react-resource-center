@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AppBar, Drawer } from 'material-ui';
 import SideBarItem from './SideBarItem';
-import { List, makeSelectable } from 'material-ui/List';
+import { List } from 'material-ui/List';
 
 /*
   Add your nav link here...
@@ -23,42 +23,6 @@ const links = [
   },
   { isExact: false, linkTo: '/tutorial', text: 'Tutorial' }
 ];
-
-let SelectableList = makeSelectable(List);
-
-function wrapState(ComposedComponent) {
-  return class SelectableList extends Component {
-    constructor(props) {
-      super(props);
-      this.handleRequestChange = this.handleRequestChange.bind(this);
-    }
-    componentWillMount() {
-      this.setState({
-        selectedIndex: this.props.defaultValue
-      });
-    }
-
-    handleRequestChange(e, index) {
-      e.preventDefault();
-      this.setState({
-        selectedIndex: index
-      });
-    }
-
-    render() {
-      return (
-        <ComposedComponent
-          value={this.state.selectedIndex}
-          onChange={this.handleRequestChange}
-        >
-          {this.props.children}
-        </ComposedComponent>
-      );
-    }
-  };
-}
-
-SelectableList = wrapState(SelectableList);
 
 export default class SideNav extends Component {
   constructor(props) {
@@ -91,7 +55,7 @@ export default class SideNav extends Component {
           docked={false}
           onRequestChange={open => this.setState({ open })}
         >
-          <SelectableList defaultValue={3}>
+          <List>
             {links.map((link, i) => {
               return (
                 <SideBarItem
@@ -103,7 +67,7 @@ export default class SideNav extends Component {
                 />
               );
             })}
-          </SelectableList>
+          </List>
         </Drawer>
       </div>
     );
