@@ -62,7 +62,7 @@ export default class SideNav extends Component {
                   isExact={link.isExact}
                   linkTo={link.linkTo}
                   primaryText={link.text}
-                  handleClose={this.handleClose}
+                  onClick={this.handleClose}
                   key={i}
                 />
               );

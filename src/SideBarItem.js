@@ -20,7 +20,7 @@ export default class SideBarItem extends Component {
       >
         <ListItem
           primaryText={this.props.primaryText}
-          onTouchTap={this.props.handleClose}
+          onTouchTap={this.props.onClick}
           hoverColor="red"
         />
       </NavLink>
