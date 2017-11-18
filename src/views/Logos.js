@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
+import GenericCard from '../components/GenericCard';
+import { CardTitle } from 'material-ui/Card';
 
 export default class Logos extends Component {
-  render () {
-    return <h1>Logos View</h1>;
+  render() {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col s12 m6">
+            <GenericCard
+              headerTitle="Header title"
+              headerAvatar="https://unsplash.it/100/200/?random=10"
+              mediaImgSrc="https://unsplash.it/120/100/?random=11"
+              overlay={
+                <CardTitle title="Overlay title" subtitle="Overlay subtitle" />
+              }
+            >
+              Te ingeniis exercitation te incididunt minim irure est sint, ubi
+              eiusmod adipisicing, quo offendit ea fabulas. E incididunt ab
+              mandaremus nam expetendis sed multos, export pariatur ne
+              cohaerescant, nostrud fore noster qui malis in tempor firmissimum
+              possumus magna expetendis se et se imitarentur, eu veniam pariatur
+              cernantur se noster si excepteur ea quis.
+            </GenericCard>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
