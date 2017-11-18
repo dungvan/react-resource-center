@@ -6,7 +6,7 @@ export default class Home extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col s12 md4">
+          <div className="col s12 m4">
             <Card>
               <CardTitle title="Card title" subtitle="Card sub title" />
               <CardText>
@@ -19,7 +19,7 @@ export default class Home extends Component {
               </CardText>
             </Card>
           </div>
-          <div className="col s12 md4">
+          <div className="col s12 m4">
             <Card>
               <CardTitle title="Card title" subtitle="Card sub title" />
               <CardText>
@@ -32,7 +32,7 @@ export default class Home extends Component {
               </CardText>
             </Card>
           </div>
-          <div className="col s12 md4">
+          <div className="col s12 m4">
             <Card>
               <CardTitle title="Card title" subtitle="Card sub title" />
               <CardText>
@@ -45,7 +45,7 @@ export default class Home extends Component {
               </CardText>
             </Card>
           </div>
-          <div className="col s12 md4">
+          <div className="col s12 m4">
             <Card>
               <CardTitle title="Card title" subtitle="Card sub title" />
               <CardText>
@@ -58,7 +58,7 @@ export default class Home extends Component {
               </CardText>
             </Card>
           </div>
-          <div className="col s12 md4">
+          <div className="col s12 m4">
             <Card>
               <CardTitle title="Card title" subtitle="Card sub title" />
               <CardText>
@@ -71,7 +71,7 @@ export default class Home extends Component {
               </CardText>
             </Card>
           </div>
-          <div className="col s12 md4">
+          <div className="col s12 m4">
             <Card>
               <CardTitle title="Card title" subtitle="Card sub title" />
               <CardText>
