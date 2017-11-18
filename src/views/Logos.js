@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GenericCard from '../components/GenericCard';
 import { CardTitle } from 'material-ui/Card';
+import { FlatButton } from 'material-ui';
 
 export default class Logos extends Component {
   render() {
@@ -11,9 +12,15 @@ export default class Logos extends Component {
             <GenericCard
               headerTitle="Header title"
               headerAvatar="https://unsplash.it/100/200/?random=10"
-              mediaImgSrc="https://unsplash.it/120/100/?random=11"
+              mediaImgSrc="https://unsplash.it/600/600/?random=11"
               overlay={
                 <CardTitle title="Overlay title" subtitle="Overlay subtitle" />
+              }
+              actions={
+                <div>
+                  <FlatButton label="Action1" />
+                  <FlatButton label="Action2" />
+                </div>
               }
             >
               Te ingeniis exercitation te incididunt minim irure est sint, ubi

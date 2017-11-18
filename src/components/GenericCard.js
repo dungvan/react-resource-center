@@ -7,7 +7,6 @@ import {
   CardText,
   CardActions
 } from 'material-ui/Card';
-import { FlatButton } from 'material-ui';
 
 export default class GenericCard extends Component {
   render() {
@@ -20,6 +19,7 @@ export default class GenericCard extends Component {
       overlay,
       cardTitle,
       cardSubtitle,
+      actions,
       children
     } = this.props;
 
@@ -40,10 +40,7 @@ export default class GenericCard extends Component {
         )}
         <CardTitle title={cardTitle} subtitle={cardSubtitle} />
         <CardText>{children}</CardText>
-        <CardActions>
-          <FlatButton label="Action1" />
-          <FlatButton label="Action2" />
-        </CardActions>
+        {actions && <CardActions>{actions}</CardActions>}
       </Card>
     );
   }
