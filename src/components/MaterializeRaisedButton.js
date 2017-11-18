@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { RaisedButton } from 'material-ui';
 
-export default class MaterializeRasedButton extends Component {
+export default class MaterializeRaisedButton extends Component {
   constructor(props) {
     super(props);
     // We need to track the hovering ourselves because we cannot
