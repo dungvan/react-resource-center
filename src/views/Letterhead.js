@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LetterheadCard from '../LetterheadCard';
+import LetterheadCard from '../components/LetterheadCard';
 
 export default class Letterhead extends Component {
   render() {

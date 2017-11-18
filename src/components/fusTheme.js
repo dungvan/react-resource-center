@@ -12,7 +12,7 @@ import {
   grey500,
   white,
   darkBlack,
-  fullBlack,
+  fullBlack
 } from 'material-ui/styles/colors';
 import { fade } from 'material-ui/utils/colorManipulator';
 import spacing from 'material-ui/styles/spacing';
@@ -34,6 +34,6 @@ export default {
     disabledColor: fade(darkBlack, 0.3),
     pickerHeaderColor: cyan500,
     clockCircleColor: fade(darkBlack, 0.07),
-    shadowColor: fullBlack,
-  },
+    shadowColor: fullBlack
+  }
 };
