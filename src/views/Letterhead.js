@@ -55,7 +55,31 @@ export default class Letterhead extends Component {
         <div className="col s12 m6" style={{ paddingBottom: '0.75rem' }}>
           <Card>
             <CardMedia>
-              <img src="https://unsplash.it/600/776/?random" alt="" />
+              <img src="https://unsplash.it/600/776/?random=1" alt="" />
+            </CardMedia>
+            <CardActions>
+              <FlatButton label="Action1" />
+            </CardActions>
+            <CardTitle title="Card title" />
+          </Card>
+        </div>
+
+        <div className="col s12 m6" style={{ paddingBottom: '0.75rem' }}>
+          <Card>
+            <CardMedia>
+              <img src="https://unsplash.it/600/776/?random=2" alt="" />
+            </CardMedia>
+            <CardActions>
+              <FlatButton label="Action1" />
+            </CardActions>
+            <CardTitle title="Card title" />
+          </Card>
+        </div>
+
+        <div className="col s12 m6" style={{ paddingBottom: '0.75rem' }}>
+          <Card>
+            <CardMedia>
+              <img src="https://unsplash.it/600/776/?random=3" alt="" />
             </CardMedia>
             <CardActions>
               <FlatButton label="Action1" />
